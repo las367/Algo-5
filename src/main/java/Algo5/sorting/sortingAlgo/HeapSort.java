@@ -1,12 +1,11 @@
 package Algo5.sorting.sortingAlgo;
 
-import Algo5.data.Student;
 import Algo5.sorting.comparator.IComparator;
 import Algo5.sorting.swapper.Swapper;
 
-public class HeapSort extends Sort implements ISort {
+public class HeapSort<T> extends Sort<T> implements ISort {
 
-	public HeapSort(Student[] array, IComparator comparator, Swapper swapper) {
+	public HeapSort(T[] array, IComparator<T> comparator, Swapper<T> swapper) {
 		super(array, comparator, swapper);
 	}
 
@@ -30,7 +29,7 @@ public class HeapSort extends Sort implements ISort {
         
         // method to transform the array into a heap and also to rank/organize the heap (possible: recursively) so that
         // the highest element would be on top.
-        private void heapify ( Student[] arr, int i ) {
+        private void heapify ( T[] arr, int i ) {
 
                 // set i as the root node -> assume el on i is the largest
                 int largest = i;

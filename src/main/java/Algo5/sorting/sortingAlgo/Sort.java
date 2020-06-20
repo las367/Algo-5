@@ -1,16 +1,16 @@
 package Algo5.sorting.sortingAlgo;
 
-import Algo5.data.Student;
+// import Algo5.data.Student;
 import Algo5.sorting.comparator.IComparator;
 import Algo5.sorting.swapper.Swapper;
 
-public class Sort {
+public class Sort<T> {
         
-        protected Student[] array;
-        protected IComparator comparator;
-        protected Swapper swapper;
+        protected T[] array;
+        protected IComparator<T> comparator;
+        protected Swapper<T> swapper;
 
-        public Sort (Student[] array, IComparator comparator, Swapper swapper) {
+        public Sort (T[] array, IComparator<T> comparator, Swapper<T> swapper) {
                 this.array = array;
                 this.comparator = comparator;
                 this.swapper = swapper;
@@ -19,7 +19,7 @@ public class Sort {
         public void printArray () {
 
                 System.out.print("(\n");
-                for ( Student st : array ) {
+                for ( T st : array ) {
                         System.out.print( st + "\n" );
                 }
                 System.out.print(")");

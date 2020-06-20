@@ -1,16 +1,14 @@
 package Algo5.sorting.swapper;
 
-import Algo5.data.Student;
-
-public class Swapper implements ISwapper {
+public class Swapper<T> implements ISwapper<T> {
 
 	@Override
-	public void swap(int from, int to, Student[] arr) {
+	public void swap(int from, int to, T[] arr) {
 
                 if ( from < 0 || to < 0 ) return;
                 if ( from >= arr.length || to >= arr.length ) return;
 
-                Student temp = arr[from];
+                T temp = arr[from];
                 arr[from] = arr[to];
                 arr[to] = temp;
 	}

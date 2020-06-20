@@ -2,7 +2,7 @@ package Algo5.sorting.comparator;
 
 import Algo5.data.Student;
 
-public class ImmatNumberComparator implements IComparator {
+public class ImmatNumberComparator implements IComparator<Student> {
 
 	@Override
 	public boolean compare ( int from, int to, Student[] arr ) {
