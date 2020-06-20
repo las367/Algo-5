@@ -7,11 +7,11 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import Algo5.sorting.helper.IntegerComparator;
-import Algo5.sorting.sortingAlgo.HeapSort;
+import Algo5.sorting.sortingAlgo.BubbleSort;
 import Algo5.sorting.sortingAlgo.Sort;
 import Algo5.sorting.swapper.Swapper;
 
-public class HeapSortTest {
+public class BubbleSortTest {
         
         @Test
         public void SortTest () {
@@ -20,12 +20,12 @@ public class HeapSortTest {
                 Integer[] expected = array;
                 Arrays.sort(expected);
 
-                Sort<Integer> heapSort = new HeapSort<Integer>(array, new IntegerComparator(), new Swapper<Integer>());
-                heapSort.sort();
+                Sort<Integer> bubbleSort = new BubbleSort<Integer>(array, new IntegerComparator(), new Swapper<Integer>());
+                bubbleSort.sort();
 
-                heapSort.printArray();
-                System.out.printf("Heap Sort \n\n");
+                bubbleSort.printArray();
+                System.out.printf("Bubble Sort\n\n");
 
-                assertArrayEquals("array sorted with heapsort should match the expected array.", expected, heapSort.getArray());
+                assertArrayEquals("array sorted with heapsort should match the expected array.", expected, bubbleSort.getArray());
         }
 }

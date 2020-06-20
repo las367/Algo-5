@@ -4,7 +4,7 @@ import Algo5.data.Student;
 import Algo5.sorting.comparator.IComparator;
 import Algo5.sorting.swapper.Swapper;
 
-public class RadixSort extends Sort implements ISort {
+public class RadixSort extends Sort {
 
 	public RadixSort(Student[] array, IComparator comparator, Swapper swapper) {
 		super(array, comparator, swapper);

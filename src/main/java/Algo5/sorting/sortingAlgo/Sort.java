@@ -16,12 +16,16 @@ public class Sort<T> {
                 this.swapper = swapper;
         }
 
+        public void sort () { }
+
         public void printArray () {
 
-                System.out.print("(\n");
+                System.out.print("[");
                 for ( T st : array ) {
-                        System.out.print( st + "\n" );
+                        System.out.print(" " +  st + " ");
                 }
-                System.out.print(")");
+                System.out.print("]\n");
         }
+
+        public T[] getArray () { return array; }
 }

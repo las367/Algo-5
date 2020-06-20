@@ -5,11 +5,11 @@ import Algo5.sorting.comparator.IComparator;
 public class IntegerComparator implements IComparator<Integer> {
 
 	@Override
-	public boolean compare(int from, int to, Integer[] arr) {
+	public int compare(int from, int to, Integer[] arr) {
 
-                if ( from < 0 || to < 0 ) return false;
-                if ( from >= arr.length || to >= arr.length ) return false;
-                return arr[from] > arr[to];
+                if ( from < 0 || to < 0 ) return -1;
+                if ( from >= arr.length || to >= arr.length ) return -1;
+                return arr[from] - arr[to];
 	}
         
 }
