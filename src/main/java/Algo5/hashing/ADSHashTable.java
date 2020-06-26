@@ -27,7 +27,7 @@ public class ADSHashTable {
     }
 
 
-    void insert (int key) throws Exception {
+    public void insert (int key) throws Exception {
 
         //collision counter
         int j = 0,
@@ -52,7 +52,7 @@ public class ADSHashTable {
         throw new Exception( String.format( sExceptionNoSpaceFree, key ));
     }
 
-    void remove (int key) throws Exception {
+    public void remove (int key) throws Exception {
 
         int j = 0,
             addr = 0,
@@ -78,7 +78,7 @@ public class ADSHashTable {
         throw new Exception( String.format(sExceptionKeyNotFound, key) );
     }
 
-    int search (int key) throws Exception {
+    public int search (int key) throws Exception {
         
         int j = 0,
             addr = 0,
@@ -98,13 +98,13 @@ public class ADSHashTable {
         throw new Exception(String.format(sExceptionKeyNotFound, key));
     }
 
-    int get (int key) throws Exception {
+    public int get (int key) throws Exception {
         
             int index = search(key);
             return hashArray.get(index);
     }
 
-    void clear () {
+    public void clear () {
         this.hashArray.clear();
     }
 

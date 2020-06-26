@@ -2,16 +2,14 @@ package Algo5.commands;
 
 import Algo5.cli.CommandLineInterface;
 
-public class CmdOne implements ICommand {
+public class CmdFive implements ICommand {
 
 	@Override
 	public void execute() {
 		
-		int key = CommandLineInterface.in.inputInt(CommandLineInterface.mNumIn);
                 try {
-			CommandLineInterface.hTable.insert(key);
-			System.out.printf("%d Key added\n", key);
-
+			CommandLineInterface.hTable.clear();
+			System.out.printf("Hash table cleared\n");
 		} catch (Exception ex) {
 			System.out.println(ex.getLocalizedMessage());
 		}

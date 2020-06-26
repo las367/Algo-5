@@ -1,4 +1,4 @@
-package Algo5.commands;
+package Algo5.cli;
 
 import java.util.Scanner;
 
