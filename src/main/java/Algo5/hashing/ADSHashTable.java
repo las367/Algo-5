@@ -40,12 +40,12 @@ public class ADSHashTable {
             if ( hashArray.isInsertable(addr) || hashArray.isMarkAsDeleted(addr) ) {
 
                 hashArray.set(addr, key);
-                debug( String.format( sMsgKeyInsertAt, key, addr ) );
+                // debug( String.format( sMsgKeyInsertAt, key, addr ) );
                 return;
             }
 
             j++;
-            debug( String.format(sMsgCollision, j, addr, hashArray.get(addr)) );
+            // debug( String.format(sMsgCollision, j, addr, hashArray.get(addr)) );
 
         } while ( j < size );
     
@@ -66,12 +66,12 @@ public class ADSHashTable {
             if ( hashArray.compareKeys(addr, key) ) {
 
                 hashArray.remove(addr);
-                debug( String.format(sMsgMarkedAsDeleted, key, addr) );
+                // debug( String.format(sMsgMarkedAsDeleted, key, addr) );
                 return;
             }
 
             j++;
-            debug( String.format(sMsgCollision, j, addr, hashArray.get(addr)) );
+            // debug( String.format(sMsgCollision, j, addr, hashArray.get(addr)) );
 
         } while ( j < size );
 
@@ -91,11 +91,17 @@ public class ADSHashTable {
             if ( hashArray.compareKeys(addr, key) ) return addr;
 
             j++;
-            debug( String.format(sMsgCollision, j, addr, hashArray.get(addr)) );
+            // debug( String.format(sMsgCollision, j, addr, hashArray.get(addr)) );
 
         } while ( j < size );
         
         throw new Exception(String.format(sExceptionKeyNotFound, key));
+    }
+
+    int get (int key) throws Exception {
+        
+            int index = search(key);
+            return hashArray.get(index);
     }
 
     void clear () {
