@@ -5,14 +5,15 @@ import Algo5.data.Student;
 import Algo5.sorting.comparator.ImmatNumberComparator;
 import Algo5.sorting.sortingAlgo.BubbleSort;
 import Algo5.sorting.sortingAlgo.HeapSort;
-import Algo5.sorting.sortingAlgo.QuickSort;
+import Algo5.sorting.sortingAlgo.MergeSort;
+// import Algo5.sorting.sortingAlgo.QuickSort;
 import Algo5.sorting.sortingAlgo.SelectionSort;
 import Algo5.sorting.sortingAlgo.Sort;
 import Algo5.sorting.swapper.Swapper;
 
 public class CmdSix implements ICommand {
 
-        private final String mSort = "1. Bubble sort.\n2. Heap sort.\n3. Quicksort.\n4. Selection sort.\n"; 
+        private final String mSort = "1. Bubble sort.\n2. Heap sort.\n3. Merge Sort.\n4. Selection sort.\n"; 
         private Sort sorter;
 
         private Student[] createStudentArray () {
@@ -55,7 +56,7 @@ public class CmdSix implements ICommand {
                                         sorter = new HeapSort<Student>(arr, new ImmatNumberComparator(), new Swapper<Student>());
                                         break;
                                 case 3:
-                                        sorter = new QuickSort<Student>(arr, new ImmatNumberComparator(), new Swapper<Student>());
+                                        sorter = new MergeSort<Student>(arr, new ImmatNumberComparator(), new Swapper<Student>());
                                         break;
                                 case 4:
                                         sorter = new SelectionSort<Student>(arr, new ImmatNumberComparator(), new Swapper<Student>());
