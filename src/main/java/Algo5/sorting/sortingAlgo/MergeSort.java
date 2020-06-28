@@ -26,10 +26,10 @@ public class MergeSort<T> extends Sort<T> {
 
                         int mid = (left + right) / 2; // find middle index
 
-                        mergeSort(arr, left, mid);
-                        mergeSort(arr, mid + 1, right);
+                        mergeSort(arr, left, mid); // sort the first half
+                        mergeSort(arr, mid + 1, right); // sort second half
 
-                        merge(arr, left, right);
+                        merge(arr, left, right); // merge these two halves
                 }
 
         }
@@ -54,10 +54,14 @@ public class MergeSort<T> extends Sort<T> {
                         secondArray[j] = arr[mid + 1 + j];
                 }
 
+                // helper vars / iteration vars to walk through the first, second and main array. k => starting index of the
+                // main "to-be merged" array.
                 int i = 0;
                 int j = 0;
                 int k = left;
 
+                // what this loop does is just comparing two elements and then adding the smaller element into the main "to-be merged"
+                // array.
                 while (i < size1 && j < size2) {
                         // using arrays.aslist here, to access the method indexOf -> all other sorting algos are using
                         // comparator to compare the elements for modularity. Here: elements being compared originate
@@ -73,7 +77,8 @@ public class MergeSort<T> extends Sort<T> {
                         }
                         k++;
                 }
-
+                
+                // last two loops => move remaining items from first/second array to the main array
                 while (i < size1) {
                         arr[k] = firstArray[i];
                         k++;
@@ -88,8 +93,8 @@ public class MergeSort<T> extends Sort<T> {
 
         }
 
-        // private void 
-
+        // java does not allow to create an array of generics. so my workaround is to first create a linkedlist
+        // of the generic and then use the toArray method to convert it to an array + casting. !! not really safe !! ⚠
         private T[] createArray (int size) {
 
                 List<T> list = new LinkedList<T>();
