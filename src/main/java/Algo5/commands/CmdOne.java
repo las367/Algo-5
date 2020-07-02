@@ -10,7 +10,7 @@ public class CmdOne implements ICommand {
 		int key = CommandLineInterface.in.inputInt(CommandLineInterface.mNumIn);
                 try {
 			CommandLineInterface.hTable.insert(key);
-			System.out.printf("%d Key added\n", key);
+			System.out.printf("Key %d added\n", key);
 
 		} catch (Exception ex) {
 			System.out.println(ex.getLocalizedMessage());

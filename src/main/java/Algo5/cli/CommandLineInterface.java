@@ -43,7 +43,6 @@ public class CommandLineInterface {
                                 break;
                         } else if (userInput > 0 && userInput < 7) {
 
-                                System.out.printf("Executing %d\n", userInput);
                                 commandList.get(userInput - 1).execute();
                         } else {
                                 System.out.printf(mAgain);
